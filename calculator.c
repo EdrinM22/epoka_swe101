@@ -26,6 +26,17 @@ double divide(double num1, double num2) {
     printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
     return result;
 }
+double findSquareRoot(double num1) {
+    double result;
+    if(num1 < 0) {
+        printf("Error: Number entered is negative\n");
+        return 0;
+    }
+    result = sqrt(num1);
+    printf("sqrt(%.2lf) = %.2lf\n", num1, result);
+    return result;
+}
+
 int main() {
     char choice;
     double num1, num2, result;
@@ -35,7 +46,7 @@ int main() {
     printf("[-] Subtraction\n");
     printf("[*] Multiplication\n");
     printf("[/] Division\n");
-    printf("[s]Square Root\n");
+    printf("[s] Square Root\n");
     printf("[^] Power\n");
     printf("[%] Modulus\n");
     scanf("%c", &choice);
@@ -62,7 +73,11 @@ int main() {
             scanf("%lf %lf", &num1, &num2);
             result = divide(num1, num2);
             break;
-
+        case 's':
+            printf("Enter a number to find square root:\n");
+            scanf("%lf", &num1);
+            result = findSquareRoot(num1);
+            break;
      }  
     return 0;  
 }
