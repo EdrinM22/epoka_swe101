@@ -16,7 +16,16 @@ double multiply(double num1, double num2) {
     printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
     return result;
 }
-
+double divide(double num1, double num2) {
+    double result;
+    if(num2 == 0) {
+        printf("Error: Cannot divide by zero\n");
+        return 0;
+    }
+    result = num1 / num2;
+    printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
+    return result;
+}
 int main() {
     char choice;
     double num1, num2, result;
@@ -47,6 +56,11 @@ int main() {
             printf("Enter two numbers to multiply:\n");
             scanf("%lf %lf", &num1, &num2);
             result = multiply(num1, num2);
+            break;
+        case '/':
+            printf("Enter two numbers to divide:\n");
+            scanf("%lf %lf", &num1, &num2);
+            result = divide(num1, num2);
             break;
 
      }  
