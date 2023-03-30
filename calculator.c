@@ -36,6 +36,11 @@ double findSquareRoot(double num1) {
     printf("sqrt(%.2lf) = %.2lf\n", num1, result);
     return result;
 }
+double findPower(double num1, double num2) {
+    double result = pow(num1, num2);
+    printf("%.2lf^%.2lf = %.2lf\n", num1, num2, result);
+    return result;
+}
 
 int main() {
     char choice;
@@ -77,6 +82,11 @@ int main() {
             printf("Enter a number to find square root:\n");
             scanf("%lf", &num1);
             result = findSquareRoot(num1);
+            break;
+        case '^':
+            printf("Enter a number and its power:\n");
+            scanf("%lf %lf", &num1, &num2);
+            result = findPower(num1, num2);
             break;
      }  
     return 0;  
