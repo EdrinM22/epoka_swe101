@@ -41,6 +41,16 @@ double findPower(double num1, double num2) {
     printf("%.2lf^%.2lf = %.2lf\n", num1, num2, result);
     return result;
 }
+double findModulus(double num1, double num2) {
+    double result;
+    if(num2 == 0) {
+        printf("Error: Divisor is 0\n");
+        return 0;
+    }
+    result = fmod(num1, num2);
+    printf("%.2lf mod %.2lf = %.2lf\n", num1, num2, result);
+    return result;
+}
 
 int main() {
     char choice;
@@ -88,6 +98,15 @@ int main() {
             scanf("%lf %lf", &num1, &num2);
             result = findPower(num1, num2);
             break;
-     }  
-    return 0;  
-}
+        case '%':
+            printf("Enter two numbers to find modulus:\n");
+            scanf("%lf %lf", &num1, &num2);
+            result = findModulus(num1, num2);
+            break;
+        default:
+            printf("Invalid operation selected\n");
+            return 0;
+            }
+    return 0; 
+    }  
+     
