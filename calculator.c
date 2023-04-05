@@ -51,6 +51,20 @@ double findModulus(double num1, double num2) {
     printf("%.2lf mod %.2lf = %.2lf\n", num1, num2, result);
     return result;
 }
+double findAverage() {
+    double sum = 0.0;
+    double count = 0.0;
+    double num;
+    char choice;
+
+    printf("Enter numbers to find average. Press any letter to calculate average.\n");
+    while (scanf("%lf", &num) == 1) {
+        sum += num;
+        count++;
+    }
+
+    printf("Average = %lf\n", sum / count);
+}
 
 int main() {
     char choice;
@@ -64,6 +78,7 @@ int main() {
     printf("[s] Square Root\n");
     printf("[^] Power\n");
     printf("[%] Modulus\n");
+    printf("[a] Average of n numbers\n");
     scanf("%c", &choice);
 
 
@@ -103,6 +118,9 @@ int main() {
             scanf("%lf %lf", &num1, &num2);
             result = findModulus(num1, num2);
             break;
+        case 'a':
+            result = findAverage();
+            break;  
         default:
             printf("Invalid operation selected\n");
             return 0;
